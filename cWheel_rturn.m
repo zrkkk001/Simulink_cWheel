@@ -52,36 +52,6 @@ c_pv=100/Elas100  %即求得100bar下对应的的刚度值 1/a  单位（bar/ml�
 PV_Curve= ka./ da %将100bar做为基准 算出value数组    
 
 
-
-
-
-%% 用于展示曲线 已注释
-hold on
-subplot(2,3,1) %将图形窗口分为n行m列个格子(在第k个格子上绘图)
-plot(sctravel,P,'*-')
-title('压力随位移的关系')%将图形窗口分为n行m列个格子(在第k个格子上绘图)
-xlabel('x(mm) ')
-ylabel('P(bar)')
-
-subplot(2,3,2) %将图形窗口分为n行m列个格子(在第k个格子上绘图)
-plot(V,P,'*-r',V,p2,'g')
-title('压力随减少体积的关系及其拟合曲线')%将图形窗口分为n行m列个格子(在第k个格子上绘图)
-xlabel('V(ml) ')
-ylabel('P(bar)')
-
-subplot(2,3,3) %将图形窗口分为n行m列个格子(在第k个格子上绘图)
-plot(V,cWheel,'*-')
-title('对曲线求导，得到刚度与减少体积的关系')%将图形窗口分为n行m列个格子(在第k个格子上绘图)
-xlabel('V(ml) ')
-ylabel('cWheel(bar/ml)')
-
-subplot(2,3,4:6)
-plot(P,cWheel,'*-')
-title({'因为刚度值并不是常数C，可以建立刚度与减少体积的映射，最终得到刚度与压力的查表曲线，','所以刚度是和压力一一对应的，知道某个时刻的压力就能得到刚度值'})%将图形窗口分为n行m列个格子(在第k个格子上绘图)
-xlabel('P（bar） ')
-ylabel('cWheel(bar/ml)')
-
-
 %% 拟合函数调用函数 勿动！
 function [fitresult, gof] = createFit1(P, V)
 %CREATEFIT(P,V)
@@ -124,3 +94,4 @@ grid on
 
 
 end
+
